@@ -23,6 +23,10 @@
     "fixcode": "standard --fix",
     "git-hook": "npm run lint -s && npm run test -s"
   },
+
+  "rnpm": {
+   "assets": ["./assets/fonts"]
+},
   "dependencies": {
     "apisauce": "^0.14.2",
     "format-json": "^1.0.3",
