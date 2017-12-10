@@ -1,6 +1,25 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image,TouchableHighlight } from 'react-native'
+import { StyleSheet, Text, View, Image,TouchableHighlight, } from 'react-native'
 import { NavigationActions } from 'react-navigation'
+import {
+  Container,
+  Header,
+  Body,
+  Content,
+  Left,
+  Title,
+  Thumbnail,
+  Col,
+  Row,
+  Grid,
+  Icon,
+  Spinner,
+  Fab,
+  Button,
+  Footer,
+  Input,
+  Right
+} from "native-base";
 
 export default class DrawerContainer extends React.Component {
 
@@ -142,7 +161,6 @@ export default class DrawerContainer extends React.Component {
                   borderBottomWidth: 1,
                 }}
             />
-
             <View style={styles.subcontainer}>
 
             <Text style={{fontSize: 20,paddingBottom:20,paddingTop:10}}>
@@ -167,29 +185,28 @@ export default class DrawerContainer extends React.Component {
                 />
 
 
-                <View style={styles.subcontainer}>
 
+                <View style={styles.tweetFooter}>
+                  <View>
+                  <Image
+                  style={{width: 30, height: 30}}
 
-                <Text style={{marginBottom:10}}>
-                      <Image
-                      style={{width: 30, height: 30}}
-                      resizeMode="contain"
-                      source={require('../../assets/icons/moon.png')}
+                  source={require('../../assets/icons/dnd.png')}
 
+                    />
+                  </View>
+                  <View/>
+                  <View/>
+                  <View>
+                  <Image
+                  style={{width: 30, height: 30}}
 
-                        />
-                        <Text>{"\t\t\t\t\t\t\t"}</Text>
+                  source={require('../../assets/icons/qr.png')}
 
-                        <Image
-                        style={{width: 30, height: 30}}
-                        resizeMode="contain"
+                    />
+                  </View>
 
-                        source={require('../../assets/icons/qr.png')}
-
-
-                          />
-                          </Text>
-            </View>
+                  </View>
 
         </View>
 
@@ -212,6 +229,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f6f6f6',
 
+  },tweetFooter: {
+
+    flexDirection: "row",
+    marginTop:20,
+    justifyContent: "space-around",
+    borderBottomColor: "#CCC",
+    borderBottomWidth: StyleSheet.hairlineWidth
+  },
+  footerIcons: {
+    flexDirection: "row",
+    alignItems: "center"
   },
 
   // uglyDrawerItem: {

@@ -1,7 +1,7 @@
 
 import Textable from '../Containers/Textable'
 import React from 'react'
-import { Text,Animated, Easing  } from 'react-native'
+import { Text,Animated, Easing, Image  } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import LoginScreen from '../Containers/LoginScreen'
 import SignupScreen from '../Containers/SignupScreen'
@@ -45,7 +45,11 @@ const drawerButton = (navigation) =>
         navigation.navigate('DrawerClose')
       }
     }
-  }>Menu</Text>
+  }><Image
+      style={{width: 35, height: 35,borderRadius:35/2,marginLeft:5,marginTop:5,paddingTop:5}}
+      source={require('../../assets/icons/propic.png')}
+    />
+    </Text>
 
 
 const DrawerNavigation = StackNavigator({
@@ -53,9 +57,9 @@ const DrawerNavigation = StackNavigator({
 }, {
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: '#4C3E54'},
-    title: 'Welcome!',
-    headerTintColor: 'white',
+    headerStyle: {backgroundColor: '#fff'},
+    title: 'Home',
+    headerTintColor: '#000',
     gesturesEnabled: false,
     headerLeft: drawerButton(navigation)
   })
@@ -78,7 +82,7 @@ const LoginStack = StackNavigator({
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
-  loginStack: { screen: LoginStack },
+  loginStack: { screen: DrawerNavigation },
   drawerStack: { screen: DrawerNavigation }
 }, {
   // Default config for all screens

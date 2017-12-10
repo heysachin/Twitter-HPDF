@@ -23,24 +23,29 @@
     "fixcode": "standard --fix",
     "git-hook": "npm run lint -s && npm run test -s"
   },
-
   "rnpm": {
-   "assets": ["./assets/fonts"]
-},
+    "assets": [
+      "./assets/fonts"
+    ]
+  },
   "dependencies": {
     "apisauce": "^0.14.2",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.4",
+    "native-base": "",
     "prop-types": "15.6.0",
     "querystringify": "1.0.0",
     "ramda": "^0.25.0",
     "react": "16.0.0",
     "react-native": "0.50.4",
+    "react-native-action-button": "^2.8.3",
     "react-native-animatable": "^1.2.4",
     "react-native-config": "^0.10.0",
     "react-native-device-info": "0.11.0",
     "react-native-i18n": "1.0.0",
+    "react-native-modalbox": "",
+    "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-vector-icons": "4.3.0",
     "react-navigation": "1.0.0-beta.11",
     "react-redux": "^5.0.6",
