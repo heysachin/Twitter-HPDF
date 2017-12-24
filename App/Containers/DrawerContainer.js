@@ -37,7 +37,13 @@ export default class DrawerContainer extends React.Component {
   render() {
     const { navigation } = this.props
     return (
-      <View style={styles.container}>
+      <View style={{
+        flex:1,
+        flexDirection:'column',
+        backgroundColor: 'rgba(230,236,240,1)',
+
+        justifyContent:'space-between',
+      }}>
           <View style={styles.subcontainer}>
 
               <Image
@@ -49,7 +55,7 @@ export default class DrawerContainer extends React.Component {
                 Sachin Dev. S{'\t\t\t\t\t'}
                 </Text>
                 <Image
-                    style={{width: 15, height: 15}}
+                    style={{paddingLeft:50,width: 50, height: 50}}
                     source={require('../../assets/icons/arrow.png')}
                   />
                 </Text>
@@ -82,7 +88,7 @@ export default class DrawerContainer extends React.Component {
                 style={{
                   marginBottom:10,
                   borderBottomColor: 'grey',
-                  borderBottomWidth: StyleSheet.hairlineWidth,
+                  borderBottomWidth: 1,
                   marginLeft:0,
                   marginRight:0
                 }}
@@ -94,12 +100,12 @@ export default class DrawerContainer extends React.Component {
         <Text>
 
                   <Image
-                    style={{width: 30, height: 30}}
+                    style={{width: 50, height: 50}}
                     source={require('../../assets/icons/profile.png')}
 
                     />
 
-                  <Text style={{fontSize: 17,textAlign:'center'}}
+                  <Text style={{fontSize: 20,textAlign:'center'}}
                   onPress={() => navigation.navigate('screen1')}>
 
                   {'      '}Profile
@@ -109,12 +115,12 @@ export default class DrawerContainer extends React.Component {
 
             <Text>
                   <Image
-                  style={{width: 30, height: 30}}
+                  style={{width: 50, height: 50}}
                   source={require('../../assets/icons/list.png')}
 
                     />
 
-                  <Text style={{fontSize: 17,textAlign:'center'}}
+                  <Text style={{fontSize: 20,textAlign:'center'}}
                   onPress={() => navigation.navigate('screen2')}
                   >
                   {'      '}List
@@ -124,13 +130,13 @@ export default class DrawerContainer extends React.Component {
 
             <Text>
                   <Image
-                  style={{width: 30, height: 30}}
+                  style={{width: 50, height: 50}}
 
                   source={require('../../assets/icons/moments.png')}
 
                     />
 
-                  <Text style={{fontSize: 17,textAlign:'center'}}
+                  <Text style={{fontSize: 20,textAlign:'center'}}
                   onPress={() => navigation.navigate('screen3')}
                   >
                   {'      '}Moments
@@ -140,13 +146,13 @@ export default class DrawerContainer extends React.Component {
 
             <Text style={{marginBottom:10}}>
                   <Image
-                  style={{width: 30, height: 30}}
+                  style={{width: 50, height: 50}}
 
                   source={require('../../assets/icons/highlights.png')}
 
                     />
 
-                  <Text style={{fontSize: 17,textAlign:'center'}}
+                  <Text style={{fontSize: 20,textAlign:'center'}}
                 onPress={this.logout}
                   >
                   {'      '}Highlights
@@ -170,13 +176,13 @@ export default class DrawerContainer extends React.Component {
             Help center
             </Text>
             </View>
-            <View style={styles.subcontainer}/>
+            <View style={styles.spaceBlank}/>
 
                 <View
                     style={{
 
                       borderBottomColor: 'grey',
-                      borderBottomWidth: StyleSheet.hairlineWidth,
+                      borderBottomWidth: 1,
 
 
                       marginLeft:0,
@@ -218,28 +224,54 @@ export default class DrawerContainer extends React.Component {
 
 const styles = StyleSheet.create({
   subcontainer: {
-    backgroundColor: '#f6f6f6',
+    backgroundColor: 'rgba(230,236,240,1)',
+
     paddingTop: 20,
     paddingHorizontal: 20,
     paddingBottom:20,
-  },subcontainer1: {
-    backgroundColor: '#f6f6f6',
-    paddingHorizontal: 20
-  },container: {
+
+      flexDirection:'column',
+      justifyContent:'space-between',
+      alignItems: "flex-start",
+
+  },
+
+  subcontainer1: {
+
+          flexDirection:'column',
+          justifyContent:'space-around',
+
+          backgroundColor: 'rgba(230,236,240,1)',
+
+    paddingHorizontal: 20,
+    alignItems: "flex-start",
+
+  },
+  spaceBlank:{
+    flexDirection:'column',
+    justifyContent:'space-around',
+    alignItems: "flex-start",
+
+
+  },
+
+  container: {
+    flexDirection:'column',
+    justifyContent:'space-around',
     flex: 1,
-    backgroundColor: '#f6f6f6',
+    backgroundColor: 'rgba(230,236,240,1)',
+    alignItems: "flex-start",
+
 
   },tweetFooter: {
 
     flexDirection: "row",
     marginTop:20,
     justifyContent: "space-around",
-    borderBottomColor: "#CCC",
-    borderBottomWidth: StyleSheet.hairlineWidth
   },
   footerIcons: {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "stretch",
   },
 
   // uglyDrawerItem: {

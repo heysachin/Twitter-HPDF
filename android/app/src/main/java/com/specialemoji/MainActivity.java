@@ -1,4 +1,4 @@
-package com.tricodia;
+package com.specialemoji;
 
 import com.facebook.react.ReactActivity;
 
