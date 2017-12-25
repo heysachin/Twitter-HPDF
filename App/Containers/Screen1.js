@@ -11,6 +11,9 @@ import { StyleSheet,
   TextInput,
 } from 'react-native'
 
+import Icon2 from 'react-native-vector-icons/Ionicons';
+import Footer from './Footer.js'
+import TwitterCard from './TwitterCard';
 import FacebookTabBar from './FacebookTabBar';
 import ActionButton from 'react-native-action-button';
 import { ApplicationStyles, Metrics, Colors } from '../../App/Themes'
@@ -19,7 +22,7 @@ import {
   Thumbnail,
   Content,
   Icon,
-  Button,
+  Button,Fab,Item,Input
 
 } from "native-base";
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
@@ -28,150 +31,54 @@ export default class Screen1 extends React.Component {
 
 
   render() {
-    return (<ScrollableTabView
-  style={{backgroundColor:'#fff',paddingTop:10 }}
-  initialPage={0}
-  renderTabBar={() => <FacebookTabBar />}
->
-  <ScrollView tabLabel="ios-home" style={styles.tabView}>
-    <View style={styles.card}>
+    return (
+      <View style={{flex:1}}>
+
+  <ScrollableTabView style={{backgroundColor: '#fff',paddingTop:10 }} initialPage={0} renderTabBar={()=>
+    <FacebookTabBar />} >
+
+      <ScrollView tabLabel="ios-home">
+      <View style={{flex:1}}>
+      <ScrollView tabLabel="ios-home" style={styles.tabView}>
+
+        <TwitterCard/>
+        <TwitterCard/>
+        <TwitterCard/>
+
+      </ScrollView>
+
+      <Fab position="bottomRight" style={{ backgroundColor: '#1da1f2' }}>
+        <Icon2 name="logo-twitter" style={{color: '#ffffff'}}/>
+      </Fab>
+    </View>
+    </ScrollView>
+    
 
 
 
-              <Content style={{ backgroundColor: "white",position:"relative" }}>
-                <View style={styles.tweetHead}>
-                  <Thumbnail source={require('../../assets/icons/propic.png')} />
-                  <View
-                    style={{
-                      flex: 1,
-
-                      paddingLeft: 10,
-                      height: 56
-                    }}
-                  >
-                  <Text>
-                    <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-                        Sachin Dev. S{'   '}
-                    </Text>
-
-                    <Text style={{ color: "#999", fontSize: 13 }}>
-                      @Sachin_Dev_S{'   '}
-                    </Text>
-                    <Text style={{ color: "#999", fontSize: 13 }}>
-                          23 mins ago
-                    </Text>
-                    </Text>
-
-                    <Text style={{ fontSize: 16, padding: 5 }}>
-                    Check out my new Tweet and website <Text style={{color:'rgb(29,161,242)'}}> www.sachindev.me</Text>
-
-                    </Text>
-                  </View>
-
-                </View>
-                <View style ={{
-                  marginTop:40,
-                paddingHorizontal:10,
-                marginBottom:20,
-                height: 156}}>
-                <Image
-                          style={{
-                            width: Metrics.screenWidth-20,
-                            height: Metrics.screenWidth/2,
-                            borderRadius:5,
-                          }}
-                          source={require('../../assets/icons/bg.png')}
-                        />
-                </View>
-
-
-
-
-                <View style={styles.tweetFooter}>
-                  <View>
-                    <Button
-                      transparent
-                      dark
-                      style={{ paddingBottom: 0, paddingTop: 0 }}
-                    >
-                      <Icon name="ios-text-outline" />
-                      <Text>60</Text>
-                    </Button>
-                  </View>
-                  <View>
-                    <Button transparent dark>
-                      <Icon name="ios-repeat" />
-                      <Text>2</Text>
-
-                    </Button>
-                  </View>
-                  <View>
-                    <Button transparent dark>
-                      <Icon name="ios-heart-outline" />
-                      <Text>19</Text>
-
-                    </Button>
-                  </View>
-                  <View>
-                    <Button transparent dark>
-                      <Icon name="ios-mail-outline" />
-                    </Button>
-                  </View>
-                </View>
-
-              </Content>
-
-
-          </View>
-<View>
-          <ActionButton
-              buttonColor="rgba(29,161,242,1)"
-              >
-                <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
-                  <Icon name="md-create" style={styles.actionButtonIcon} />
-                </ActionButton.Item>
-                <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
-                  <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
-                </ActionButton.Item>
-                <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
-                  <Icon name="md-done-all" style={styles.actionButtonIcon} />
-                </ActionButton.Item>
-              </ActionButton>
-</View>
-        </ScrollView>
-
-
-        <ScrollView tabLabel="ios-search" style={styles.tabView} >
-        <View style={styles.searchSection}>
+    <ScrollView tabLabel="ios-search" style={styles.tabView}>
+      <View style={styles.searchSection}>
         <TouchableOpacity>
-            <Icon name="md-arrow-back" style={{
-              fontSize: 30,
-              color: 'rgba(29,161,242,1)',
-              padding: 15,
-              paddingRight:40,
-            }}/>
-            </TouchableOpacity>
+          <Icon name="md-arrow-back" style={{ fontSize: 30, color: 'rgba(29,161,242,1)', padding: 15, paddingRight:40, }}/>
+        </TouchableOpacity>
 
-            <TextInput
-                style={{margin:30},styles.input}
-                placeholder="Search Twitter"
-                onChangeText={(searchString) => {this.setState({searchString})}}
-                underlineColorAndroid="transparent"
-            />
-        </View>
-        </ScrollView>
-        <ScrollView tabLabel="ios-notifications" style={styles.tabView}>
-          <View style={styles.card}>
-            <Text>Notifications</Text>
-          </View>
-        </ScrollView>
-        <ScrollView tabLabel="ios-mail" style={styles.tabView}>
-          <View style={styles.card}>
-            <Text>Messages</Text>
-          </View>
-        </ScrollView>
+        <TextInput style={{margin:30},styles.input} placeholder="Search Twitter" onChangeText={(searchString)=> {this.setState({searchString})}} underlineColorAndroid="transparent" />
+      </View>
+    </ScrollView>
+    <ScrollView tabLabel="ios-notifications" style={styles.tabView}>
+      <View style={styles.card}>
+        <Text>Notifications</Text>
+      </View>
+    </ScrollView>
+    <ScrollView tabLabel="ios-mail" style={styles.tabView}>
+      <View style={styles.card}>
+        <Text>Messages</Text>
+      </View>
+    </ScrollView>
 
-      </ScrollableTabView>
+  </ScrollableTabView>
+  <Footer/>
+</View>
 
 
 )

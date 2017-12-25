@@ -1,16 +1,14 @@
-
-import Textable from '../Containers/Textable'
 import React from 'react'
 import { Text,Animated, Easing, Image  } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import LoginScreen from '../Containers/LoginScreen'
-import SignupScreen from '../Containers/SignupScreen'
-import ForgottenPasswordScreen from '../Containers/ForgottenPasswordScreen'
 import Screen1 from '../Containers/Screen1'
 import Screen2 from '../Containers/Screen2'
 import Screen3 from '../Containers/Screen3'
-import DrawerContainer from '../Containers/DrawerContainer'
+import Screen4 from '../Containers/Screen4'
 
+
+import DrawerContainer from '../Containers/DrawerContainer'
+import { Metrics } from '../../App/Themes'
 
 import styles from './Styles/NavigationStyles'
 
@@ -28,6 +26,7 @@ const DrawerStack = DrawerNavigator({
   screen1: { screen: Screen1 },
   screen2: { screen: Screen2 },
   screen3: { screen: Screen3 },
+  screen4: { screen: Screen4 },
 }, {
   gesturesEnabled: false,
   contentComponent: DrawerContainer
@@ -46,7 +45,7 @@ const drawerButton = (navigation) =>
       }
     }
   }><Image
-      style={{width: 35, height: 35,borderRadius:35/2,marginLeft:5,marginTop:5,paddingTop:5}}
+      style={{width: Metrics.screenWidth/8, height: Metrics.screenWidth/8 ,borderRadius:35/2,marginLeft:5,marginTop:5,paddingTop:5}}
       source={require('../../assets/icons/propic.png')}
     />
     </Text>
@@ -65,18 +64,6 @@ const DrawerNavigation = StackNavigator({
   })
 })
 
-// login stack
-const LoginStack = StackNavigator({
-  loginScreen: { screen: LoginScreen },
-  signupScreen: { screen: SignupScreen },
-  forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
-}, {
-  headerMode: 'float',
-  navigationOptions: {
-    headerStyle: {backgroundColor: 'red'},
-    title: 'You are not logged in'
-  }
-})
 
 
 

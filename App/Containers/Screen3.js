@@ -6,7 +6,7 @@ export default class Screen3 extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Screen3</Text>
+        <Text>Moments</Text>
       </View>
     )
   }
